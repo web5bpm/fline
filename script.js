@@ -1,8 +1,10 @@
 const mainOfSite = document.getElementsByTagName('main')[0];
 const boxOfCustomerView = document.createElement('div');
+document.getElementsByClassName('mother-of-carosel')[0].style.display = "none";
 
 for (let i = 0; i < 5; i++) {
     const boxOfCustomer = document.createElement('div');
+    boxOfCustomer.className = "box-of-customer"
     const boxOfCustomerCover = document.createElement('img');
     boxOfCustomerCover.setAttribute('src', listOfCustomer[i].coverOfCustomer);
     const boxOfCustomerElement = document.createElement('div');
@@ -29,24 +31,22 @@ for (let i = 0; i < 5; i++) {
     })
 
     function customerView() {
-        if (i == 2) {
-            boxOfCustomer.style.scale = "1.5";
-            boxOfCustomer.style.zIndex = "3";
-        }
-        else if (i == 1 || i == 3) {
-            boxOfCustomer.style.scale = "1.2";
-            boxOfCustomer.style.zIndex = "2";
-
-            if (window.innerWidth <= 490) {
-                boxOfCustomer.style.display = "none";
+        if (innerWidth > 490) {
+            if (i == 2) {
+                boxOfCustomer.style.scale = "1.5";
+                boxOfCustomer.style.zIndex = "3";
             }
-        }
-        else {
-            boxOfCustomer.style.scale = ".9";
-            boxOfCustomer.style.zIndex = "1";
+            else if (i == 1 || i == 3) {
+                boxOfCustomer.style.scale = "1.2";
+                boxOfCustomer.style.zIndex = "2";
+            }
+            else {
+                boxOfCustomer.style.scale = ".9";
+                boxOfCustomer.style.zIndex = "1";
 
-            if (window.innerWidth <= 755) {
-                boxOfCustomer.style.display = "none";
+                if (window.innerWidth <= 755) {
+                    boxOfCustomer.style.display = "none";
+                }
             }
         }
     }
@@ -70,19 +70,73 @@ for (let i = 0; i < 5; i++) {
     });
 
     if (window.innerWidth <= 490) {
-        const caroselMoveLeft = document.createElement('i');
-        caroselMoveLeft.className = 'bx bxs-left-arrow';
-        const caroselMoveRight = document.createElement('i');
-        caroselMoveRight.className = 'bx bxs-right-arrow';
-
-        boxOfCustomer.append(caroselMoveLeft, caroselMoveRight);
-        boxOfCustomerCover.style.scale = "1";
-        boxOfCustomer.style.scale = '1';
-        boxOfCustomer.style.display = 'flex'; boxOfCustomer.addEventListener('mouseover', () => {
-            customerViewForOver();
-        });
+        boxOfCustomer.style.display = "none";
     }
 }
+
+if (window.innerWidth <= 490) {
+    boxOfCustomerView.style.display = "none";
+
+    document.getElementsByClassName('mother-of-carosel')[0].style.display = "block";
+    document.getElementsByClassName('mother-of-carosel')[0].style.overflow = "hidden"
+
+    const carouselSlide = document.getElementsByClassName('carousel slide')[0];
+
+    const carouselIndicators = document.createElement('div');
+    carouselIndicators.className = "carousel-indicators";
+
+    const carouselInner = document.createElement('div');
+    carouselInner.className = "carousel-inner";
+
+
+    for (let i = 0; i < 4; i++) {
+        const indicatorsButtons = document.createElement('button');
+        indicatorsButtons.setAttribute("aria-label", "Slide " + (i + 1));
+        indicatorsButtons.setAttribute("type", "button");
+        indicatorsButtons.setAttribute("data-bs-target", "#carouselExampleCaptions");
+        indicatorsButtons.setAttribute("data-bs-slide-to", i);
+
+        const carouselItem = document.createElement('div');
+        carouselItem.setAttribute("class", "carousel-item");
+
+        const carouselItemImage = document.createElement("img");
+        carouselItemImage.setAttribute("src", listOfCustomer[i].coverOfCustomer);
+        carouselItemImage.setAttribute("class", "d-block w-100");
+        carouselItemImage.setAttribute("alt", "no photo");
+
+        const boxOfCustomerElement = document.createElement('div');
+        boxOfCustomerElement.className = 'box-element'
+        const boxOfCustomerElementName = document.createElement('span');
+        boxOfCustomerElementName.textContent = listOfCustomer[i].nameOfCustomer;
+        const boxOfCustomerElementLink = document.createElement('div');
+        const boxOfCustomerElementLink1 = document.createElement('a');
+        boxOfCustomerElementLink1.textContent = "Sayta Get";
+        boxOfCustomerElementLink1.setAttribute('href', listOfCustomer[i].linkOfCustomer);
+        boxOfCustomerElementLink1.setAttribute('target', "_blank");
+        const boxOfCustomerElementLink2 = document.createElement('a');
+        boxOfCustomerElementLink2.textContent = "Ətraflı Bax";
+        boxOfCustomerElementLink2.setAttribute('href', "ourworks.html#ourProject");
+        boxOfCustomerElementLink.append(boxOfCustomerElementLink1, boxOfCustomerElementLink2)
+        boxOfCustomerElement.append(boxOfCustomerElementName, boxOfCustomerElementLink);
+
+        if (i === 0) {
+            indicatorsButtons.setAttribute("aria-current", "true");
+            indicatorsButtons.setAttribute("class", "active");
+
+            carouselItem.classList = "carousel-item active";
+        }
+
+        carouselIndicators.append(indicatorsButtons);
+
+        carouselItem.append(carouselItemImage, boxOfCustomerElement);
+        carouselInner.append(carouselItem)
+    }
+
+    carouselSlide.append(carouselIndicators, carouselInner);
+}
+
+
+
 
 const boxOfCustomerMore = document.createElement('a');
 boxOfCustomerMore.textContent = "Daha Ətraflı Bax";
@@ -90,6 +144,7 @@ boxOfCustomerMore.setAttribute('href', "ourworks.html#ourProject");
 
 
 const promoter = document.createElement('section');
+promoter.className = "promouter"
 const promoterHead = document.createElement('h3');
 promoterHead.textContent = "Virtual Promouter nədir və onunla nələr əldə edərik?";
 const promoterParagraf = document.createElement('p');
