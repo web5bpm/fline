@@ -101,7 +101,7 @@ main>a:hover {
     width: 100%;
 }
 
-main>section {
+main>.promouter {
     margin: 40px 0;
     padding: 30px 0px 15px;
     border-top: 1px solid lightgray;
@@ -112,24 +112,24 @@ main>section {
     background-repeat: repeat;
 }
 
-main>section>h3 {
+main>.promouter>h3 {
     color: var(--color2);
     font-weight: 900;
 }
 
-main>section>p {
+main>.promouter>p {
     color: var(--color1);
     font-weight: 600;
     padding: 30px 0;
 }
 
-main>section>div {
+main>.promouter>div {
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
 
-main>section>div>div {
+main>.promouter>div>div {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -143,21 +143,21 @@ main>section>div>div {
     background-color: white;
 }
 
-main>section>div>div:hover {
+main>.promouter>div>div:hover {
     transform: translateY(-20px);
 }
 
-main>section>div>div>h5 {
+main>.promouter>div>div>h5 {
     color: var(--color1);
 }
 
-main>section>div>div>iframe {
+main>.promouter>div>div>iframe {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-main>section>div>div>a {
+main>.promouter>div>div>a {
     color: white;
     font-weight: 900;
     text-decoration: none;
@@ -178,7 +178,7 @@ main>section>div>div>a {
     padding: 0;
 }
 
-main>section>div>div>a::before {
+main>.promouter>div>div>a::before {
     position: absolute;
     content: '';
     top: -5px;
@@ -189,7 +189,7 @@ main>section>div>div>a::before {
     border-radius: 50%;
 }
 
-main>section>div>div>a:hover {
+main>.promouter>div>div>a:hover {
     border-color: var(--color1);
     color: white;
 }
@@ -248,7 +248,7 @@ main>p>i {
         padding: 4px 9px 5px;
     }
 
-    main>section>div {
+    main>.promouter>div {
         gap: 10px;
     }
 }
@@ -260,12 +260,12 @@ main>p>i {
         height: 150px;
     }
 
-    main>section>div {
+    main>.promouter>div {
         flex-wrap: wrap;
         gap: 0;
     }
 
-    main>section>div>div {
+    main>.promouter>div>div {
         width: 48%;
         margin-bottom: 50px;
     }
@@ -274,7 +274,7 @@ main>p>i {
 /*planşet mod*/
 
 @media(max-width: 1000px) {
-    main>section {
+    main>.promouter {
         margin-bottom: 10px;
     }
 }
@@ -286,7 +286,7 @@ main>p>i {
         height: 170px;
     }
 
-    main>section>p {
+    main>.promouter>p {
         text-align: justify;
     }
 }
@@ -303,95 +303,117 @@ main>p>i {
         width: 140px;
     }
 
-    main>section>div {
+    main>.promouter>div {
         justify-content: center;
     }
 
-    main>section>div>div {
+    main>.promouter>div>div {
         width: 80%;
     }
 }
 
 
 @media(max-width: 490px) {
-    main>div {
-        position: relative !important;
-        height: 270px;
-        padding: 0;
+    main>.mother-of-carosel {
         margin: 20px 0;
-        overflow: visible;
+        border: 1px solid var(--color1);
+        border-radius: 10px;
+        height: 270px;
+        position: relative;
+        z-index: 0;
     }
 
-    main>div>div {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-        transform: translateY(0);
-    }
-
-    main>div>div::before {
+    main>.mother-of-carosel::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, .25);
+        background-color: rgba(0, 0, 0, .3);
+        z-index: 10;
         width: 100%;
         height: 100%;
-        z-index: 1;
-        padding: 0;
-    }
-    main>div>div>div{
-        border: none;
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        pointer-events: none;
     }
 
-    main>div>div>div>span {
-        font-size: 1.3rem;
-        margin-bottom: 5px;
-        padding: 10px;
+
+    main>.mother-of-carosel>.carousel {
+        width: 100%;
+        height: 100%;
     }
 
-    main>div>div>div>div {
-        gap: 10px;
+    main>.mother-of-carosel>.carousel>.carousel-inner {
+        width: 100%;
+        height: 100%;
     }
 
-    main>div>div>div>div>a {
-        width: 50%;
-        padding: 8px 0;
-        font-size: 1rem;
-        text-align: center;
+    main>.mother-of-carosel>.carousel>.carousel-inner>.carousel-item {
+        width: 100%;
+        height: 100%;
     }
 
-    main>div>div>i {
+    main>.mother-of-carosel>.carousel>.carousel-inner>.carousel-item>img {
+        width: 100%;
+        height: 100%;
+    }
+
+    main>.mother-of-carosel>.carousel>.carousel-inner>.carousel-item>.box-element {
         position: absolute;
-        top: 55%;
-        background-color: var(--color1);
-        border: 2px solid white;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
         padding: 10px;
-        border-radius: 50%;
-        cursor: pointer;
+    }
+
+    main>.mother-of-carosel>.carousel>.carousel-inner>.carousel-item>.box-element>span {
+        background-color: var(--color1);
+        padding: 10px 20px;
         color: white;
-        margin: 0 10px;
-        z-index: 20;
+        font-weight: 600;
+        display: inline;
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 5px;
     }
 
-    main>div>div>.bxs-right-arrow {
-        right: 0;
+    main>.mother-of-carosel>.carousel>.carousel-inner>.carousel-item>.box-element>div {
+        display: flex;
+        gap: 5px;
+    }
+
+    main>.mother-of-carosel>.carousel>.carousel-inner>.carousel-item>.box-element>div>a {
+        background: linear-gradient(to left, var(--color2), var(--color1));
+        width: 100%;
+        padding: 10px;
+        color: white;
+        font-weight: 400;
+        text-align: center;
+        font-size: .9rem;
+        text-decoration: none;
+        border-radius: 3px;
+    }
+
+    main>.mother-of-carosel>.carousel>.carousel-inner>.carousel-item>.box-element>div>a:hover {
+        background: linear-gradient(to left, var(--color1), var(--color2));
+        color: white;
     }
 
 
+    main>.mother-of-carosel>.carousel>.carousel-indicators {
+        z-index: 1000 !important;
+    }
 
-    main>section>div>div {
+    main>.promouter>div>div {
         width: 100%;
     }
 
-    main>section>div>div>a {
+    main>.promouter>div>div>a {
         width: 80px;
         height: 80px;
+    }
+
+    main>.promouter>div>div:hover {
+        transform: translateY(0px);
     }
 }
