@@ -1,0 +1,67 @@
+::marker {
+    color: var(--color2);
+}
+
+main {
+    padding: 25px;
+}
+
+main>h1 {
+    padding: 35px 0;
+    color: var(--color2);
+    font-weight: 900;
+}
+
+main>p {
+    padding: 15px 0;
+    color: var(--color1);
+    font-weight: 500;
+}
+
+main>p>a {
+    color: var(--color2);
+}
+
+main>p>span {
+    text-transform: uppercase;
+    color: var(--color2);
+    font-weight: 800;
+}
+
+main>ul {
+    padding: 45px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px lightgray;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+main>ul>li {
+    color: var(--color1);
+}
+
+main>div {
+    margin-top: 50px;
+}
+
+main>div>iframe {
+    width: 100%;
+}
+
+
+@media(max-width: 500px){
+    main{
+        padding: 10px;
+    }
+    main>h1{
+        padding: 15px 0;
+    }
+    main>p{
+        text-align: justify;
+    }
+    main>div>iframe{
+        height: 270px;
+    }
+}

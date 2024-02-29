@@ -1,0 +1,397 @@
+::marker {
+    color: var(--color2);
+}
+
+main>div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+main>div>div {
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+    position: relative;
+    transition: .5s;
+    border: 1px solid var(--color1);
+    overflow: hidden;
+}
+
+main>div>div::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 40px;
+    height: 40px;
+    rotate: 45deg;
+    background: linear-gradient(to left, var(--color2), var(--color1));
+}
+
+main>div>div>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    scale: 1;
+    transition: .5s;
+}
+
+main>div>div>div {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    border-radius: 10px;
+    border: 1px solid var(--color2);
+    box-shadow: inset 0px 0px 5px white;
+    padding: 7px;
+}
+
+main>div>div>div>span {
+    background-color: var(--color1);
+    padding: 4px 8px;
+    color: white;
+    font-weight: 600;
+    display: inline;
+    font-size: .75rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+main>div>div>div>div {
+    display: flex;
+    gap: 5px;
+}
+
+main>div>div>div>div>a {
+    background: linear-gradient(to left, var(--color2), var(--color1));
+    padding: 4px 13px 5px;
+    color: white;
+    font-weight: 400;
+    display: inline;
+    font-size: .65rem;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+main>div>div>div>div>a:hover {
+    background: linear-gradient(to left, var(--color1), var(--color2));
+    color: white;
+}
+
+main>a {
+    padding: 20px 0;
+    border-radius: 5px;
+    background: linear-gradient(to left, var(--color1), var(--color2));
+    color: white;
+    text-decoration: none;
+    transition: .5s;
+    width: 190px;
+    display: inline-block;
+    text-align: center;
+}
+
+main>a:hover {
+    color: white;
+    width: 100%;
+}
+
+main>section {
+    margin: 40px 0;
+    padding: 30px 0px 15px;
+    border-top: 1px solid lightgray;
+    border-radius: 10px;
+    background-image: url(profil/FLINE.png);
+    background-size: 300px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+main>section>h3 {
+    color: var(--color2);
+    font-weight: 900;
+}
+
+main>section>p {
+    color: var(--color1);
+    font-weight: 600;
+    padding: 30px 0;
+}
+
+main>section>div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+main>section>div>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 10px 10px 35px;
+    box-shadow: 0px 0px 5px lightgray;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    position: relative;
+    transition: .5s;
+    background-color: white;
+}
+
+main>section>div>div:hover {
+    transform: translateY(-20px);
+}
+
+main>section>div>div>h5 {
+    color: var(--color1);
+}
+
+main>section>div>div>iframe {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+main>section>div>div>a {
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+    background-color: var(--color1);
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: .5s;
+    padding: 0;
+}
+
+main>section>div>div>a::before {
+    position: absolute;
+    content: '';
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-top: 2.5px solid lightgray;
+    border-radius: 50%;
+}
+
+main>section>div>div>a:hover {
+    border-color: var(--color1);
+    color: white;
+}
+
+
+
+
+main>p {
+    position: fixed;
+    bottom: 1vh;
+    left: 5%;
+    background-color: var(--color1);
+    color: white;
+    z-index: 10;
+    height: calc(100% - (1vh + 85px));
+    width: 90%;
+    padding: 40px 10px 10px;
+    text-align: justify;
+    overflow-y: scroll;
+    border-radius: 10px;
+    box-shadow: 0px 0px 80px rgb(93, 93, 93);
+}
+
+main>p>i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    color: white;
+    font-weight: 900;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+
+@media(max-width: 1300px) {
+    main>div {
+        padding: 70px 0;
+    }
+
+    main>div>div {
+        width: 190px;
+        height: 170px;
+    }
+
+    main>div>div>div>span {
+        font-size: .7rem;
+        margin-bottom: 3px;
+    }
+
+    main>div>div>div>div>a {
+        font-size: .5rem;
+        padding: 4px 9px 5px;
+    }
+
+    main>section>div {
+        gap: 10px;
+    }
+}
+
+
+@media(max-width: 1150px) {
+    main>div>div {
+        width: 170px;
+        height: 150px;
+    }
+
+    main>section>div {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    main>section>div>div {
+        width: 48%;
+        margin-bottom: 50px;
+    }
+}
+
+/*planşet mod*/
+
+@media(max-width: 1000px) {
+    main>section {
+        margin-bottom: 10px;
+    }
+}
+
+
+@media(max-width: 755px) {
+    main>div>div {
+        width: 180px;
+        height: 170px;
+    }
+
+    main>section>p {
+        text-align: justify;
+    }
+}
+
+
+@media(max-width: 600px) {
+    main>div>div {
+        width: 140px;
+        height: 140px;
+    }
+
+    main>a {
+        padding: 10px 0;
+        width: 140px;
+    }
+
+    main>section>div {
+        justify-content: center;
+    }
+
+    main>section>div>div {
+        width: 80%;
+    }
+}
+
+
+@media(max-width: 490px) {
+    main>div {
+        position: relative !important;
+        height: 270px;
+        padding: 0;
+        margin: 20px 0;
+        overflow: visible;
+    }
+
+    main>div>div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        transform: translateY(0);
+    }
+
+    main>div>div::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, .25);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 0;
+    }
+    main>div>div>div{
+        border: none;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    main>div>div>div>span {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+    main>div>div>div>div {
+        gap: 10px;
+    }
+
+    main>div>div>div>div>a {
+        width: 50%;
+        padding: 8px 0;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    main>div>div>i {
+        position: absolute;
+        top: 55%;
+        background-color: var(--color1);
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: white;
+        margin: 0 10px;
+        z-index: 20;
+    }
+
+    main>div>div>.bxs-right-arrow {
+        right: 0;
+    }
+
+
+
+    main>section>div>div {
+        width: 100%;
+    }
+
+    main>section>div>div>a {
+        width: 80px;
+        height: 80px;
+    }
+}

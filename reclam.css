@@ -1,0 +1,191 @@
+::marker {
+    color: var(--color2);
+}
+
+main {
+    padding: 0;
+    background-image: url(profil/FLINE.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.as-carosel {
+    display: flex;
+}
+
+.as-carosel>h1 {
+    width: 35%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 900;
+    color: var(--color1);
+    padding: 0 10px;
+    border-bottom: 2px solid var(--color1);
+}
+
+.as-carosel>div {
+    width: 65%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 20px;
+    position: relative;
+    background-image: url(profil/carosel1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.as-carosel>div>span {
+    text-align: left;
+    display: block;
+    width: 95%;
+    color: white;
+    text-shadow: 0 0 5px var(--color1);
+    font-weight: 900;
+    font-size: 380%;
+    position: absolute;
+    left: 5%;
+    transition: .8s;
+}
+
+.ability {
+    padding: 20px;
+    margin: 35px 0;
+}
+
+.ability>h1 {
+    padding: 15px 0;
+    color: var(--color1);
+    font-weight: 900;
+    text-align: center;
+}
+
+.ability>div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.ability>div>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-position: inside;
+    box-shadow: 0 0 5px lightgray;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.ability>div>ul>li {
+    font-size: 1.1rem;
+    font-weight: 550;
+    color: var(--color1);
+}
+
+.our-customers {
+    padding: 20px;
+    margin: 35px 0;
+}
+
+.our-customers>h1 {
+    padding: 5px 0;
+    color: var(--color1);
+    font-weight: 900;
+    text-align: center;
+}
+
+.our-customers>div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.our-customers>div>a {
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    text-decoration: none;
+}
+
+.our-customers>div>a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+@media(max-width: 755px) {
+    .as-carosel>div>span{
+        font-size: 300%;
+    }
+    .ability>div>ul {
+        padding: 40px 25px;
+    }
+}
+
+@media(max-width: 600px) {
+    .as-carosel{
+        flex-direction: column;
+        background-image: url(profil/carosel1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .as-carosel>h1{
+        width: 100%;
+        height: 18vh;
+        background-color: rgba(255, 255, 255, .5);
+        border-bottom: none;
+    }
+    .as-carosel>div{
+        width: 100%;
+        height: 25vh;
+        background-image: none;
+    }
+    .as-carosel>div>span{
+        font-size: 270%;
+        width: 90%;
+    }
+    .ability {
+        padding: 20px 10px;
+        margin-bottom: 0;
+    }
+
+    .ability>div {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .ability>div>ul {
+        padding: 30px 10px;
+    }
+
+    .our-customers {
+        margin: 20px 0;
+    }
+
+    .our-customers>div>a {
+        width: 120px;
+        height: 40px;
+    }
+}
+
+@media(max-width: 400px){
+    .as-carosel>div{
+        height: 27vh;
+    }
+    .as-carosel>div>span{
+        font-size: 240%;
+    }
+}
