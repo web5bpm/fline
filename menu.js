@@ -128,7 +128,7 @@ const copyRight = document.createElement('div');
 copyRight.setAttribute("class", "copyright");
 const copyRightSpan = document.createElement('span');
 const copyRightLink = document.createElement('a');
-copyRightLink.setAttribute("href", "https://vidadi-ali.com");
+copyRightLink.setAttribute("href", "https://vidadiali.com");
 copyRightLink.setAttribute("target", "_blank");
 copyRightLink.setAttribute("style", "color: white;");
 copyRightLink.textContent = "Vidadi Ali";
